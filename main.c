@@ -41,6 +41,18 @@ int main(void)
 
     len = _printf("%K\n");
     len2 = printf("%K\n");
+
+    len = _printf("%!\n");
+    len2 = printf("%!\n");
+
+    _printf(NULL);
+    printf(NULL);
+
+    _printf("%c", '\0');
+    printf("%c", '\0');
+
+    _printf("%");
+    printf("%");
     /*
     ui = (unsigned int)INT_MAX + 1024;
     addr = (void *)0x7ffe637541f0;

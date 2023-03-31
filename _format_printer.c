@@ -23,9 +23,7 @@ int format_printer(const char *format, va_list list, format_converter arr[])
 				{
 					express = arr[j].func(list);
 					if (express == -1)
-					{
 						return (-1);
-					}
 					print_count += express;
 					break;
 				}
@@ -36,12 +34,10 @@ int format_printer(const char *format, va_list list, format_converter arr[])
 				{
 					write(1, &format[i - 1], 1);
 					write(1, &format[i], 1);
-					print_count+=2;
+					print_count += 2;
 				}
 				else
-				{
 					return (-1);
-				}
 			}
 		}
 		else
