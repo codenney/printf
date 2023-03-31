@@ -57,11 +57,9 @@ int _print_decimal(va_list list)
 	int print_count = 0;
 
 	/**
-	 * if (value < 0)
+	 * if (value == INT_MIN)
 	 * {
-	 * _putchar('-');
-	 * print_count++;
-	 * value = -value;
+	 * return (-1);
 	 * }
 	 */
 
