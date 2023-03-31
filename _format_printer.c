@@ -30,6 +30,19 @@ int format_printer(const char *format, va_list list, format_converter arr[])
 					break;
 				}
 			}
+			if (arr[j].symbol == NULL && format[i] != ' ')
+			{
+				if (format[i] != '\n')
+				{
+					write(1, &format[i - 1], 1);
+					write(1, &format[i], 1);
+					print_count+=2;
+				}
+				else
+				{
+					return (-1);
+				}
+			}
 		}
 		else
 		{

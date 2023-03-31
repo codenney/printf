@@ -35,10 +35,12 @@ int main(void)
     
     len = _printf("Negative:[%d]\n", -762534);
     len2 = printf("Negative:[%d]\n", -762534);
-    /*
-    _printf("%d\n", 0);
-    printf("%d\n", 0);
-                */
+    
+    len = _printf("%d\n", 0);
+    len2 = printf("%d\n", 0);
+
+    len = _printf("%K\n");
+    len2 = printf("%K\n");
     /*
     ui = (unsigned int)INT_MAX + 1024;
     addr = (void *)0x7ffe637541f0;
