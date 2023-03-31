@@ -1,6 +1,5 @@
-#include <stdio.h>
 #include "main.h"
-#include <stdarg.h>
+
 /**
  * _printf - function produces output according to a format
  * @format: - constant character string
@@ -8,42 +7,28 @@
  */
 int _printf(const char *format, ...)
 {
-	int i;
-	int j;
-	int array;
-	va_list args;
+	va_list arg;
 
-	array = 0;
-	va_start(args, format);
+	int char_count;
 
-	for (i = 0; format[i] != '\0'; i++)
+	format_converter func_array[] = {
+		{"c", _print_char},
+		{"s", _print_string},
+		{"%", _print_percent},
+		{"d", _print_decimal},
+		{"i", _print_decimal},
+		{NULL, NULL}};
+
+	va_start(arg, format);
+
+	if (format == NULL)
 	{
-		if (format[i] == '%')
-		{i++;
-			if (format[i] == 'c')
-			{char b = (char)va_arg(args, int);
-
-				putchar(b);
-				array++;
-			}
-			else if (format[i] == 's')
-			{char *str = va_arg(args, char *);
-
-				for (j = 0; str[j] != '\0'; j++)
-				{putchar(str[j]);
-			array++;
-				}
-			}
-			else if (format[i] == '%')
-			{putchar('%');
-		array++;
-			}
-		}
-		else
-		{putchar(format[i]);
-		array++;
-		}
+		return (-1);
 	}
-	va_end(args);
-	return (array++);
+
+	char_count = format_printer(format, arg, func_array);
+
+	va_end(arg);
+
+	return (char_count);
 }
