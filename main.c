@@ -51,8 +51,8 @@ int main(void)
     _printf("%c", '\0');
     printf("%c", '\0');
 
-    _printf("%");
-    printf("%");
+    len = _printf("%");
+    len2 = printf("%");
     /*
     ui = (unsigned int)INT_MAX + 1024;
     addr = (void *)0x7ffe637541f0;

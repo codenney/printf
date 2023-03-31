@@ -30,7 +30,7 @@ int format_printer(const char *format, va_list list, format_converter arr[])
 			}
 			if (arr[j].symbol == NULL && format[i] != ' ')
 			{
-				if (format[i] != '\n')
+				if (format[i] != '\0')
 				{
 					write(1, &format[i - 1], 1);
 					write(1, &format[i], 1);
