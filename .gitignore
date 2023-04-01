@@ -1,2 +1,3 @@
 test
-mai*.c
+/main.c
+/_printf
