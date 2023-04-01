@@ -56,14 +56,39 @@ int _print_decimal(va_list list)
 	int value = va_arg(list, int);
 	int print_count = 0;
 
-	/**
-	 * if (value == INT_MIN)
-	 * {
-	 * return (-1);
-	 * }
-	 */
+	if (value == INT_MIN)
+	{
+		_putchar('-');
+		print_count++;
 
-	print_count += _print_number(value);
+		_putchar('2');
+		_putchar('1');
+		_putchar('4');
+		_putchar('7');
+		_putchar('4');
+		_putchar('8');
+		_putchar('3');
+		_putchar('6');
+		_putchar('4');
+		_putchar('8');
+		print_count += 10;
+		return (print_count);
+	}
+
+	if (value < 0)
+	{
+		_putchar('-');
+		print_count++;
+		value = -value;
+	}
+	else if (value == 0)
+	{
+		_putchar('0');
+		print_count++;
+		return (print_count);
+	}
+
+	print_count += _print_number((int)value);
 
 	return (print_count);
 }
@@ -81,9 +106,17 @@ int _print_number(int num)
 	if (num < 0)
 	{
 		_putchar('-');
-		num = -num;
 		print_count++;
+		if (num == INT_MIN)
+		{
+			print_count += _print_number(-(num + 1) / 10);
+			_putchar('8');
+			print_count++;
+			return (print_count);
+		}
+		num = -num;
 	}
+
 	if (num / 10 != 0)
 	{
 		print_count += _print_number(num / 10);
