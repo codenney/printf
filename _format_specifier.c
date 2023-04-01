@@ -103,20 +103,6 @@ int _print_number(int num)
 {
 	int print_count = 0;
 
-	if (num < 0)
-	{
-		_putchar('-');
-		print_count++;
-		if (num == INT_MIN)
-		{
-			print_count += _print_number(-(num + 1) / 10);
-			_putchar('8');
-			print_count++;
-			return (print_count);
-		}
-		num = -num;
-	}
-
 	if (num / 10 != 0)
 	{
 		print_count += _print_number(num / 10);
