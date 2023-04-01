@@ -57,9 +57,12 @@ int main(void)
     len = _printf("%d\n", INT_MIN);
     len2 = printf("%d\n", INT_MIN);
 
-    len = _printf("%b\n", 100);
-	len2 = printf("%b\n", 100);
+    len = _printf("%b\n", -5);
+	len2 = printf("%b\n", -5);
     /*
+    len = _printf("%b\n", 5);
+    len2 = printf("%b\n", 5);
+    
 
     ui = (unsigned int)INT_MAX + 1024;
     addr = (void *)0x7ffe637541f0;
