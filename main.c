@@ -57,8 +57,8 @@ int main(void)
     len = _printf("%d\n", INT_MIN);
     len2 = printf("%d\n", INT_MIN);
 
-    _printf("%b\n", 98);
-	printf("%b\n", 98);
+    len = _printf("%b\n", 100);
+	len2 = printf("%b\n", 100);
     /*
 
     ui = (unsigned int)INT_MAX + 1024;

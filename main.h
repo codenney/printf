@@ -14,6 +14,7 @@ int _print_string(va_list list);
 int _print_percent(va_list list);
 int _print_decimal(va_list list);
 int _print_number(int n);
+int _print_binary(va_list list);
 
 /**
  * struct convert - Main entry

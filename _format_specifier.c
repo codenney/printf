@@ -112,3 +112,37 @@ int _print_number(int num)
 
 	return (print_count);
 }
+
+/**
+ * _print_binary - print the binary of a number
+ * @list: va_list containing the number to be converted
+ *
+ * Return: nothing
+ */
+int _print_binary(va_list list)
+{
+	int num = va_arg(list, int);
+	int count = 0;
+	int binary[32] = {0};
+	int i, j;
+
+	if (num == 0)
+	{
+		_putchar(num + '0');
+		return (1);
+	}
+
+	for (i = 0; num > 0; i++)
+	{
+		binary[i] = num % 2;
+		num = num / 2;
+	}
+
+	for (j = i - 1; j >= 0; j--)
+	{
+		_putchar(binary[j] + '0');
+		count++;
+	}
+
+	return (count);
+}
